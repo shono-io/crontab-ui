@@ -1,5 +1,5 @@
 # docker run -d -p 8000:8000 alseambusher/crontab-ui
-FROM alpine:3.15.3
+FROM docker:cli
 
 ENV   CRON_PATH /etc/crontabs
 
@@ -24,9 +24,7 @@ COPY . /crontab-ui
 RUN   npm install
 
 ENV   HOST 0.0.0.0
-
 ENV   PORT 8000
-
 ENV   CRON_IN_DOCKER true
 
 EXPOSE $PORT
